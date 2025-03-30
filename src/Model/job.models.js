@@ -17,6 +17,9 @@ class Job {
     static get(){
         return jobs;
     }
+    static getID(Id){
+      return jobs.find((j)=>j.id==Number(Id));
+  }
   }
   
   // Array to store job instances

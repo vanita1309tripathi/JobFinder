@@ -1,0 +1,11 @@
+<div class="container mt-4">
+    <h2><%= job.title %> at <%= job.company %></h2>
+    <p><strong>Location:</strong> <%= job.location %></p>
+    <p><strong>Salary:</strong> <%= job.salary %></p>
+    <p><strong>Skills Required:</strong> <%= job.skills.join(", ") %></p>
+
+    <h4>Job Description</h4>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec sed nulla lorem.</p>
+
+    <button class="btn btn-success" onclick="applyForJob('<%= job.id %>')">Apply Now</button>
+</div>

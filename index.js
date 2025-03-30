@@ -24,6 +24,7 @@ server.get("/", (req, res) => {
 server.post('/login',UserController.login);
 server.post('/register',UserController.register)
 server.get('/jobs',JobController.getJobs);
+server.get('/jobs/:id',JobController.getJobDetails);
 
 // Start server
 server.listen(3100, () => {
