@@ -2,15 +2,18 @@ body {
     background-color: rgb(195, 195, 219);
     
 }
-.container{
+.main-div{
+    height: 80vh; /* Full viewport height */
+}
+
+/* Hero Section */
+.container-hero{
     display: flex;
     justify-content: center;
     align-items: center;
     height: 80vh; /* Full viewport height */
     margin: 0;
 }
-
-/* Hero Section */
 .hero {
     display: flex;
     align-items: center;
@@ -84,4 +87,35 @@ body {
 /* Hero Image */
 .hero-image img {
     width: 400px;
+}
+
+/* Job View */
+.job-container{
+    height:80vh;
+    background-color: whitesmoke;
+
+}
+
+.card-body{
+    background-color: #321140;
+    color:white;
+}
+.card-title{
+    color:aqua !important;
+}
+.card-subtitle{
+    color:bisque !important;
+}
+.card-body{
+   
+    border-radius: 30px; /* Smooth edges */
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.card-body:hover{
+    transform: translateX(-5px);
+}
+.btn{
+    background-color: #ff3c96;
+   
 }

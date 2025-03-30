@@ -1,4 +1,4 @@
-import { Job } from "../Model/job.models";
+import { Job } from "../Model/job.models.js";
 export default class JobController{
 
     static getJobs(req,res,next){

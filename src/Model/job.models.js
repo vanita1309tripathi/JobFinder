@@ -45,6 +45,7 @@ class Job {
         "Hyedarabad",
         "20 lpa"
       )
+      
   ];
   
   export default jobs;
