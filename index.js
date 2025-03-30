@@ -2,7 +2,7 @@ import express from "express";
 import expressEjsLayouts from "express-ejs-layouts";
 import path from "path";
 import { UserController } from "./src/Controller/user.controller.js";
-import { register } from "module";
+import JobController from "./src/Controller/job.controller.js";
 
 
 const server = express();
@@ -23,6 +23,7 @@ server.get("/", (req, res) => {
 });
 server.post('/login',UserController.login);
 server.post('/register',UserController.register)
+server.get('/jobs',JobController.getJobs);
 
 // Start server
 server.listen(3100, () => {
