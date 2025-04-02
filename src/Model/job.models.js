@@ -7,12 +7,13 @@ class Job {
       this.skills=skills;
       this.location = location;
       this.salary = salary;
-      this.applications = []; // Array to store job applications
+      this.applications=[];
     }
   
     // Method to add an application to this job
-    addApplication(application) {
-      this.applications.push(application);
+    addApplication(name,email,resume) {
+      
+      this.applications.push({name,email,resume});
     }
     static get(){
         return jobs;

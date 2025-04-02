@@ -5,8 +5,9 @@ export class UserController{
    static login(req,res,next){
         if(User.logged(req.body.email,req.body.password)){
             console.log("User found:",req.body.email); 
-            // req.session.userMail=req.body.email;
-            // console.log("Session set:", req.session); // Debugging session storage
+            let uType=User.getUserType(req.body.email);
+            req.session.userType=uType;
+        
          
             res.json({success:true});
        }

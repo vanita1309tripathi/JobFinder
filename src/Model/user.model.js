@@ -23,6 +23,10 @@ export class User{
         console.log("Invalid credentials",email,password);
         return false;
     }
+    static getUserType(email){
+        let user=users.find(u=>u.email==email);
+        return user.userType;
+    }
 }
 const users = [
   new User(1,"JobSeeker1","testjob1@gmail.com",12345,"seeker"),
