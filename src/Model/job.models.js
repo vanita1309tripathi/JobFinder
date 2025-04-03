@@ -21,10 +21,12 @@ class Job {
     static getID(Id){
       return jobs.find((j)=>j.id==Number(Id));
   }
+
    static add(job){
     let newJob = new Job(  
       jobs.length + 1   // Correct the length syntax
   );
+  console.log("Parameter received for joining:",job);
     Object.assign(newJob,job);
     console.log("Newjob:",newJob);
     

@@ -49,7 +49,14 @@ export default class JobController{
        
     }
     static addJob(req,res,next){
-        Job.add(req.body);
+        let { title, company, skills, location, salary } = req.body;
+        
+    // Convert skills from a comma-separated string to an array
+    skills = skills.split(",").map(skill => skill.trim());
+
+    const newJob = { title, company, skills, location, salary };
+    console.log("New Job:", newJob);
+        Job.add(newJob);
         res.render('jobs',{jobs:jobs});
     }
     static addJobView(req,res,next){
