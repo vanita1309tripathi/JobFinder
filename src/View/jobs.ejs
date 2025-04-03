@@ -1,5 +1,5 @@
 
-<% if (session.userType === 'recruiter') { %>
+<% if (userType === 'recruiter') { %>
     <div class="addJobBtn"><button class="btn btn-primary " onclick="location.href='/addJobView'">Add new job</button></div>
 <% } %>
 <div class="container mt-4 d-flex">
@@ -9,7 +9,24 @@
             <div class="col-md-4">
                 <div class="card mb-4">
                     <div class="card-body">
-                        <h4 class="card-title"><%= job.company %></h4>
+                        <% if (userType === 'recruiter') { %>
+                        <div class="titleIcon"><h4 class="card-title"><%= job.company %></h4>
+                            <div>
+                                <!-- <a href="/update"><span class="material-symbols-outlined">
+                                edit_square
+                                </span></a> -->
+                                <a href="/delete/<%=job.id%>">
+                                    <span class="material-symbols-outlined">
+                                        delete
+                                    </span>
+                                </a>
+                               
+                            </div>
+                        </div>
+                        <% } %>  
+                        <% if (userType === 'seeker') { %>  
+                            <h4 class="card-title"><%= job.company %></h4>
+                         <% } %>        
                         <h5 class="card-subtitle mb-2 text-muted"><%= job.title %></h5>
                         <p class="card-text">
                             <span class="material-symbols-outlined">

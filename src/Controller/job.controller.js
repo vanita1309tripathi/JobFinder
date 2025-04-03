@@ -18,11 +18,12 @@ let jobs=Job.get();
 export default class JobController{
     
     static getJobs(req,res,next){
-        res.render('jobs',{jobs:jobs});
+        res.render('jobs',{jobs:jobs,userType: req.session.userType});
     }
     static getJobDetails(req,res,next){
         let id=req.params.id;
         let JobFound=Job.getID(parseInt(id));
+        
         if(JobFound){
             res.render('jobDetails',{job:JobFound});
         }
@@ -57,9 +58,15 @@ export default class JobController{
     const newJob = { title, company, skills, location, salary };
     console.log("New Job:", newJob);
         Job.add(newJob);
-        res.render('jobs',{jobs:jobs});
+        res.render('jobs',{jobs:jobs,userType: req.session.userType});
     }
     static addJobView(req,res,next){
+      
         res.render('newJob');
+    }
+    static deleteJob(req,res,next){
+        let id=req.param.id;
+        Job.delete(id);
+        res.render('jobs',{jobs:jobs,userType: req.session.userType});
     }
 }

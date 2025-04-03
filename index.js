@@ -33,13 +33,14 @@ server.get("/", (req, res) => {
 server.post('/login',UserController.login);
 server.post('/register',UserController.register)
 server.get('/jobs',auth,JobController.getJobs);
-server.get('/jobs/:id',JobController.getJobDetails);
-server.post('/apply',upload.single('resume'),JobController.apply); 
+server.get('/jobs/:id',auth,JobController.getJobDetails);
+server.post('/apply',auth,upload.single('resume'),JobController.apply); 
  //'resume' is the name attribute in the input for type 'file'
  //upload is the variable I have defined as Multer instance 
 
- server.get('/addJobView',JobController.addJobView)
- server.post('/addJob',JobController.addJob);
+ server.get('/addJobView',auth,JobController.addJobView)
+ server.post('/addJob',auth,JobController.addJob);
+ server.get('/delete/:id',JobController.deleteJob);
 // Start server
 server.listen(3100, () => {
     console.log("Server is listening on port 3100");

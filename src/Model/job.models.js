@@ -33,10 +33,15 @@ class Job {
     jobs.push(newJob);
     console.log("New Job Added");
    }
+   static delete(id){
+    let index=jobs.findIndex(j=>j.id==id);
+    jobs.splice(index,1);
+    console.log("Job deleted successfully.");
+   }
   }
   
   // Array to store job instances
-  const jobs = [
+  let jobs = [
     new Job(
       1,
       "Frontend Developer",
