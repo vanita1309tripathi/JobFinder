@@ -1,0 +1,29 @@
+<h1>Add New Job</h1>
+
+<form action="/addJob" method="post" enctype="multipart/form-data"> 
+    <div class="mb-3">
+      <label for="title" class="form-label">Job Title</label>
+      <input type="text" class="form-control" id="title" name="title">
+    </div>
+    <div class="mb-3">
+      <label for="company" class="form-label">Company Name</label>
+      <input type="text" class="form-control" id="company" name="company">
+    </div>
+    <div class="mb-3 ">
+        <label class="form-label" for="skills">Skills</label>
+      <input type="text" class="form-control" id="skills" name="skills">
+      
+    </div>
+    <div class="mb-3 ">
+        <label class="form-label" for="location">Location</label>
+      <input type="text" class="form-control" id="location" name="location">
+      
+    </div>
+    <div class="mb-3 ">
+        <label class="form-label" for="salary">Salary</label>
+      <input type="text" class="form-control" id="salary" name="salary">
+      
+    </div>
+    
+    <button type="submit" class="btn btn-primary">Add Job</button>
+  </form>

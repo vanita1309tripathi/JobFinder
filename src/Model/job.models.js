@@ -21,6 +21,16 @@ class Job {
     static getID(Id){
       return jobs.find((j)=>j.id==Number(Id));
   }
+   static add(job){
+    let newJob = new Job(  
+      jobs.length + 1   // Correct the length syntax
+  );
+    Object.assign(newJob,job);
+    console.log("Newjob:",newJob);
+    
+    jobs.push(newJob);
+    console.log("New Job Added");
+   }
   }
   
   // Array to store job instances

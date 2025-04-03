@@ -29,6 +29,6 @@ export class User{
     }
 }
 const users = [
-  new User(1,"JobSeeker1","testjob1@gmail.com",12345,"seeker"),
-  new User(1,"Recruiter1","testrecruiter1@gmail.com",12345,"recruiter"),
+  new User(1,"JobSeeker1","testjob1@gmail.com","12345","seeker"),
+  new User(1,"Recruiter1","testrecruiter1@gmail.com","12345","recruiter"),
   ];

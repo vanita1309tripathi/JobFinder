@@ -4,9 +4,8 @@ export const auth=(req,res,next)=>{
         next();
     }
     else{
-        alert("")
-        res.redirect('/');
+        res.status(401).send("Please login first")
     }
-      
+    
     
 }

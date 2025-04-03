@@ -13,6 +13,8 @@ document.getElementById("loginForm").addEventListener("submit", function (e) {
     .then(data => {
         if (data.success) {
             alert("Login successful!");
+            document.getElementById("authModal").style.display = "none";
+            window.location.href = "/"; 
             
         } else {
             alert("Invalid credentials!");

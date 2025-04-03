@@ -38,6 +38,8 @@ server.post('/apply',upload.single('resume'),JobController.apply);
  //'resume' is the name attribute in the input for type 'file'
  //upload is the variable I have defined as Multer instance 
 
+ server.get('/addJobView',JobController.addJobView)
+ server.post('/addJob',JobController.addJob);
 // Start server
 server.listen(3100, () => {
     console.log("Server is listening on port 3100");

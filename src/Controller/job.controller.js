@@ -48,4 +48,11 @@ export default class JobController{
 
        
     }
+    static addJob(req,res,next){
+        Job.add(req.body);
+        res.render('jobs',{jobs:jobs});
+    }
+    static addJobView(req,res,next){
+        res.render('newJob');
+    }
 }

@@ -119,3 +119,9 @@ body {
     background-color: #ff3c96;
    
 }
+
+.addJobBtn{
+    display: flex;
+    align-items: center;
+    justify-content:right;
+}
