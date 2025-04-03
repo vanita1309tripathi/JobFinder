@@ -1,4 +1,7 @@
-<div class="addJobBtn"><button class="btn btn-primary " onclick="location.href='/addJobView'">Add new job</button></div>
+
+<% if (session.userType === 'recruiter') { %>
+    <div class="addJobBtn"><button class="btn btn-primary " onclick="location.href='/addJobView'">Add new job</button></div>
+<% } %>
 <div class="container mt-4 d-flex">
     
     <div class="row d-flex justify-content-center align-items-center job-container">

@@ -1,6 +1,6 @@
 export const auth=(req,res,next)=>{
    
-    if(req.session.userType=='seeker'){
+    if(req.session.userType === 'seeker' || req.session.userType === 'recruiter'){
         next();
     }
     else{
