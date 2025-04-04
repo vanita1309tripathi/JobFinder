@@ -60,9 +60,9 @@ export default class JobController{
         Job.add(newJob);
         res.render('jobs',{jobs:jobs,userType: req.session.userType});
     }
-    static addJobView(req,res,next){
+    static addJob(req,res,next){
       
-        res.render('newJob');
+        res.render('newJob',{errors:null});
     }
     static deleteJob(req,res,next){
         let id=req.param.id;

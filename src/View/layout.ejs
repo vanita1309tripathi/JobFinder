@@ -20,8 +20,12 @@
             <a class="nav-link text-light" href="/jobs">Jobs</a>
             <!-- data-toggle="modal" → Tells Bootstrap that this element will trigger a modal.
              data-target="#authModal" → Specifies the id of the modal that should open when this element is clicked. -->
+             <% if(userType){ %>
+                
+              <a class="nav-link text-light" href="/logout">Logout</a>
+          <% }else{ %>  
             <a class="nav-link text-light" href="#" data-toggle="modal" data-target="#authModal">Login/Register</a>
-
+            <%}%>
             
         </div>
         </div>

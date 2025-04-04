@@ -1,4 +1,9 @@
-<h1>Add New Job</h1>
+<div><h1 style="background-color:  #ff3c96;color:white;padding:5px;margin:5px;">Add New Job</h1></div>
+<% if (errors) { %>
+  <% errors.forEach((error) => { %>
+    <span class="alert alert-danger" style="padding:7px;margin:7px;"> <%= error.msg %></span><br>
+  <% }); %>
+<% } %>
 
 <form action="/addJob" method="post" enctype="application/x-www-form-urlencoded"> 
     <div class="mb-3">

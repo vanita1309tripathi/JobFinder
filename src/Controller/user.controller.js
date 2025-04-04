@@ -7,8 +7,6 @@ export class UserController{
             console.log("User found:",req.body.email); 
             let uType=User.getUserType(req.body.email);
             req.session.userType=uType;
-        
-         
             res.json({success:true});
        }
        else{
@@ -22,6 +20,17 @@ export class UserController{
         User.add(req.body);
         console.log("New User added");
         res.json({success:true});
+    }
+    static logout(req,res){
+        req.session.destroy((err)=>{
+            if(err){
+                res.status(401).send(err);
+            }
+            else{
+                res.redirect('/');
+            }
+        })
+       
     }
 
 }
